@@ -17,3 +17,28 @@
 //
 // Example:
 // removNb(26) should return [ {15, 21}, {21, 15} ]
+function removNb(n) {
+	var array = [];
+	var sum = 0;
+	
+	for( var i = 1;i <=n ; i++) {
+		array.push(i)
+	}
+	for(var j = 0 ; j < array.length ; j++) {
+		sum += array[j]
+	}
+	for ( var x = 0; x <= n ; x++) {
+		for(var y = 1 ; y <= n ; y++) {
+			if(x*y === sum -(x+y)) {
+				return ['{'+x+','+y+'}'+','+'{'+y+','+x+'}']
+			}
+		}
+	}
+	return 'Cheater'
+}
+
+
+
+
+
+
