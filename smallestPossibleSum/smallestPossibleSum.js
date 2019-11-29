@@ -28,3 +28,22 @@
 // Additional notes:
 
 // There are performance tests consisted of very big numbers and arrays of size at least 30000. Please write an efficient algorithm to prevent timeout.
+function smallestPossibleSum(array) {
+	var newArray = array.sort();
+	var result = 0;
+
+	if(newArray.length > 1) {
+		for (var i = 0 ; i < newArray.length ; i++) {
+			if(newArray[i] > newArray[i+1]) {
+				newArray[i] = newArray[i] - newArray[i+1]
+			}
+		}
+		//console.log(newArray)
+		//return smallestpossibleSum(newArray)
+	}
+		
+		for(var j = 0 ; j < newArray.length ; j++) {
+			result += newArray[j]
+		}
+		return result ;
+}
