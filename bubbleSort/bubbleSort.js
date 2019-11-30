@@ -35,4 +35,15 @@
 
 var bubbleSort = function(array) {
   // Your code here.
+  var holder;
+  for(var i = 0 ; i < array.length ; i++) {
+  		if(array[i] > array[i+1]) {
+  			holder = array[i]
+  			array[i] = array[i+1]
+  			array[i+1] = holder
+  		}
+  	}
+  
+  return array
 };
+//O(n)
