@@ -41,9 +41,10 @@ var bubbleSort = function(array) {
   			holder = array[i]
   			array[i] = array[i+1]
   			array[i+1] = holder
+ 		 	bubbleSort(array)
   		}
   	}
-  
+
   return array
 };
-//O(n)
+//O(n²)
