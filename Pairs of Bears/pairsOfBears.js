@@ -20,3 +20,25 @@ x will always be a positive integer, and s will never be empty
 
 
 */
+function pairsOfBears(x, s) {
+	var array = s.split('');
+	var numberOfPairs = 0;
+	var resultString = '';
+
+	for(var i = 0 ; i < array.length ; i++) {
+		if(array[i] === 'B' && array[i+1] ==='8') {
+			array.splice(i, 1)
+			array.splice(i+1, 1)
+			resultString += 'B8'
+			numberOfPairs++
+		}
+		if(array[i] === '8' && array[i+1] ==='B') {
+			array.splice(i, 1)
+			array.splice(i+1, 1)
+			resultString +='8B'
+			numberOfPairs++
+		}
+
+	}
+	return [resultString, x <= numberOfPairs]
+}
