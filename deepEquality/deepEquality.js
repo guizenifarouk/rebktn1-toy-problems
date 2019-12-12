@@ -12,4 +12,20 @@
   *
   */
 var deepEquals = function(apple, orange) {
+	var newApple = Object.keys(apple)
+	var newOrange = Object.keys(orange)
+
+	if(newApple.length !== newOrange.length) {
+		return false
+	}
+	for(var i = 0 ; i < newApple.length ; i++) {
+		if(newApple[i] !== newOrange[i]) {
+			return false
+		}	
+		if(newApple[i] === newOrange[i] && typeof apple[newApple[i]] ==='object' && typeof orange[newOrange[i]] ==='object' ){
+			deepEquals(apple[newApple[i]],orange[newOrange[i]])
+		}
+	}
+
+	return true
 };
