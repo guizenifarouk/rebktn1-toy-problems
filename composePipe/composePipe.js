@@ -33,8 +33,20 @@
 
 'use strict';
 
-var compose = function() {
+var compose = function(functions) {
+	return function(x) {
+		for(var i = functions.length -1 ; i = 0 ; i--){
+			functions[i](x)
+		}
+	return x
+	}
 };
 
-var pipe = function() {
+var pipe = function(functions) {
+	return function(x) {
+		for(var i = 0 ; i < functions.length-1 ; i++) {
+			functions[i](x)
+		}
+	return x
+	}
 };
