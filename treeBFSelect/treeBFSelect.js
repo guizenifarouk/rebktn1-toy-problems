@@ -46,7 +46,7 @@ Tree.prototype.BFSelect = function(filter) {
 	 	for(var i = 0 ; i < node.children.length ; i++){
 	 		travreseAndFilter(node.children[i], depth++)
 	 	}
-	 	search(this,0)
+	 	travreseAndFilter(this,0)
 	 	return result || 'No value succeded to pass filter'
   // return an array of values for which the function filter(value, depth) returns true
 };
