@@ -38,6 +38,16 @@ var Tree = function(value) {
 
 
 Tree.prototype.BFSelect = function(filter) {
+	var result = [];
+	 travreseAndFilter = (node, depth) => {
+	 	if(filter(node.value, depth)) {
+	 		result.push(node.value)
+	 	}
+	 	for(var i = 0 ; i < node.children.length ; i++){
+	 		travreseAndFilter(node.children[i], depth++)
+	 	}
+	 	search(this,0)
+	 	return result || 'No value succeded to pass filter'
   // return an array of values for which the function filter(value, depth) returns true
 };
 
