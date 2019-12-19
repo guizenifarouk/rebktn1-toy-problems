@@ -40,15 +40,34 @@
 
 
 var Range = function(start, end, step) {
+	this.ranges = {}
+	this.start = start;
+	this.end = end;
+	this.step = step;
+	if(!this.end){
+		this.start = this.end;
+	}
+	if(!start){
+		return null;
+	}
+	//i didn't understand well the problem
 };
 
 Range.prototype.size = function () {
+	return Object.keys(this.ranges).length
 };
 
 Range.prototype.each = function (callback) {
+	Object.values(this.ranges).forEach(element => {
+		return callback(element)
+	})
 };
 
 Range.prototype.includes = function (val) {
+	if(this.ranges[val]){
+		return true
+	}
+	return false;
 };
 
 var range = new Range(1);
