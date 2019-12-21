@@ -39,4 +39,9 @@
 
 
 var asyncMap = function(tasks, callback) {
+	for(var i = 0 ; i < tasks.length ; i++) {
+		var func = tasks[i](result)
+			callback(func)
+	}
 };
+// coudln't solve it i'll try more at night
