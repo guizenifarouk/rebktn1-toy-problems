@@ -14,11 +14,29 @@
 *   - Make your function return answers for any number of rounds.
 *
 * Example:
-* rockPaperScissors(5); // => ['RRRRR', 'RRRRP', 'RRRRS', etc...]
+* 	; // => ['RRRRR', 'RRRRP', 'RRRRS', etc...]
 *
 */
 
-var rockPaperScissors = function (
-) {
-  // TODO: your solution here
+var rockPaperScissors = function (rounds) {
+	var choices = ['R', 'P', 'S']
+	var output = []
+
+  if(!rounds || rounds < 0) {
+  	return 'Choose the number of rounds in the game'
+  } else {
+	  	while(rounds !== 0) {
+	  		for(var i = 0 ; i < choices.length; i++) {
+	  			for(var j = 0 ; j < choices.length; j++) {
+	  				for(var k = 0 ; k < choices.length; k++) {
+	  					var middleArray = []
+	  					middleArray.push(choices[i],choices[j],choices[k])
+	  					output.push(middleArray)
+	  				}  			
+	  			}
+	  		}
+	  		rounds --
+	  	}
+  } 
+  return output;
 };
