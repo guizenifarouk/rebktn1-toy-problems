@@ -13,5 +13,17 @@
   */
 
 var allAnagrams = function(string) {
-  // Your code here.
+  // Your code here
+  var split = string.split('')
+  var result = []
+  if(split.length < 2) {
+	return [string]
+} else {
+	for(var i = 0 ; i < split.length ; i++) {
+		var letter = split[i]
+		if(split.indexOf(letter) != 1) {
+
+		}
+	}
+}
 };
