@@ -7,3 +7,16 @@ Constraints: Solve this linear time complexity O(n)
 zeroSum([ 1, 3, 2, -3 ]) // true
 zeroSum([ 5, 7, 2, 9 ]) // false
 */
+function zeroSum(array){
+
+	var length = array.length
+	while( length !== 0){
+		var current = array[length]
+		if(array.indexOf(-current) === 1 ){
+			return true
+		}
+		length--
+	}
+	return false
+}
+
