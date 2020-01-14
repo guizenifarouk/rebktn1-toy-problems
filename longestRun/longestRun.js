@@ -12,4 +12,31 @@ longestRun("abcdefgh") // [ 0, 0 ]
 longestRun("abccccccc") // [ 2, 8 ]
 */
 
-function longestRun(string) {}
+function longestRun(string) {
+	var toArray = string.split('');
+	var initial = [0,0]
+	var initialDifference = initial[1] - initial[0]
+
+	for(var i = 0 ; i < toArray.length  ; i++) {
+
+			var current = toArray[i]			
+			var next = toArray[i+1]		
+			var reference = [0,0]
+			var difference = reference[1] - reference[0]
+
+			if(next == current) {
+				reference[1] = i
+				console.log(reference[1])
+				if(next !== current) {
+					reference[0] = i
+				if(difference >= initialDifference){
+					initial = reference.slice(0)
+				console.log(reference[1])
+
+				}
+			}
+			} 
+	}
+	return initial
+}
+// still working 
