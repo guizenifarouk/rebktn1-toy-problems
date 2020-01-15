@@ -37,7 +37,19 @@ var Tree = function(value) {
 /**
  * You shouldn't need to change anything below here, but feel free to look.
  */
-
+ Tree.prototype.countLeaves = function (node) {
+ 	var leaveCount = 0
+ 	var checkAndCount = function(node) {
+	 	if(node.children.length === 0) {
+	 		leaveCount++
+	 	}
+ 		for(var i = 0 ; i < node.children.length ; i++) {
+ 			checkAndCount(node.children[i])
+ 		}
+ 	}
+ 	checkAndCount(this)
+ 	return leaveCount
+ }
 /**
  * add an immediate child
  * (wrap values in Tree nodes if they're not already)
