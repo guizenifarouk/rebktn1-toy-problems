@@ -12,6 +12,7 @@ longestRun("abcdefgh") // [ 0, 0 ]
 longestRun("abccccccc") // [ 2, 8 ]
 */
 
+<<<<<<< HEAD
 function longestRun(string) {
 	var toArray = string.split('');
 	var initial = [0,0]
@@ -40,3 +41,8 @@ function longestRun(string) {
 	return initial
 }
 // still working 
+=======
+
+
+
+>>>>>>> 26958188a2074d88c523cd902b4e19b8f6d513e6
