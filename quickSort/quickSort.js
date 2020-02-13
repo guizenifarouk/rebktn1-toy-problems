@@ -24,5 +24,18 @@ NOTE: DO NOT use JavaScript’s built-in sorting function (Array.prototype.sort)
 */
 
 function quickSort(arr) {
-  // your code here...
+  var pivot = arr[arr.length-1]
+  var left = []
+  var right = []
+  if(arr.length <= 1){
+  	return arr
+  }
+  for(var i = 0 ; i < arr.length -1 ; i++) {
+  	if(arr[i] < pivot) {
+  		left.push(arr[i])
+  	} else {
+  		right.push(arr[i])
+  	}
+  }
+  return [...quickSort(left), pivot , ...quickSort(right)]
 }

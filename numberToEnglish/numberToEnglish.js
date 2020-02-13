@@ -54,5 +54,10 @@ var numbersToPlace = {
 };
 
 function numberToEnglish(number) {
-  // your code here...
-}
+  var result = []
+  var array = number.toString().split('')
+  for(var i = array.length - 1 ; i>= 0; i--) {
+  	result.unshift(numbersToWords[array[i]])
+  }
+  console.log(result)
+  }

@@ -12,4 +12,11 @@ toMilitary("04:00") // "04:00"
 
 function toMilitary(time) {
   // your code here...
+  var hours = time.split(':')[0]
+  var minutes = time.split(':')[1].slice(0,2)
+  var clock = time.split(':')[1].slice(2)
+  if(clock === 'undefined') {
+  	return time
+  }
+  	if (clock ==='am') {return time.slice(clock)}
 }

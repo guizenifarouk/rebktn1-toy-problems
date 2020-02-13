@@ -20,4 +20,19 @@ volume([1,2,3,2,1]) // 0
 
 function volume(heights) {
   // your code here...
+  var array = []
+  if(heights.length < 3) {
+  	return 0
+  }
+  for(var i = 0 ; i < heights.length ; i++) {
+  	if(heights[i] === 0) {
+  	array.push(Math.min(heights[i-1],heights[i+1]))
+  	} else {
+  		return 0
+  	}
+  }
+  for(var i = 0 ; i< array.length ; i++) {
+  	return Math.max(array[i])
+  }
+
 }
